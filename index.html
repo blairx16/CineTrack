@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineTrack</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1 class="app-title">CineTrack</h1>
+    <p class="welcome-message">Welcome! Please start by entering the information for your movie.</p>
+  </header>
+  <div class="container">
+    <form id="taskform">
+      <div class="form-row">
+        <label for="taskName">Movie Name</label>
+        <input type="text" name="taskName" id="taskName" required="true">
+      </div>
+      
+      <div class="form-row">
+        <label for="taskType">Genre</label>
+        <select id="taskType" name="taskType" required="true">
+          <option value="">Select one</option>
+          <option value="Action">Action</option>
+          <option value="Romance">Romance</option>
+          <option value="Horror">Horror</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="SciFi">Sci-Fi</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="taskTime">Your Rating</label>
+        <input type="number" name="taskTime" id="taskTime" min="1" max="10" required="true" oninput="limitRating(this)">
+      </div>
+      <div class="form-row">
+        <label for="taskFeedback">Your Review</label>
+        <textarea name="taskFeedback" id="taskFeedback" required="true"></textarea>
+      </div>
+      <div class="form-row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    <h2 class="saved-movies-title">Saved Movies:</h2>
+    <ul id="tasklist"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
